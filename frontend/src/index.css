@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --beige-soft: #F5F5DC;
+  --brown-light: #D2B48C;
+  --brown-dark: #5C4033;
+  --cream-bg: #FFFDD0;
+  --charcoal: #333333;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--cream-bg);
+  color: var(--brown-dark);
+  font-family: 'Inter', system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(92, 64, 51, 0.05); /* brown-dark/5 */
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(92, 64, 51, 0.3); /* brown-dark/30 */
+  border-radius: 10px;
+  border: 2px solid var(--cream-bg);
+  background-clip: padding-box;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(92, 64, 51, 0.5); /* brown-dark/50 */
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Input focus states */
+input:focus, textarea:focus, select:focus {
+  outline: 2px solid var(--brown-light);
+  outline-offset: 1px;
+  border-color: var(--brown-dark);
+  box-shadow: 0 0 8px rgba(210, 180, 140, 0.4);
+}
+
+::selection {
+  background-color: var(--brown-light);
+  color: var(--brown-dark);
+}
+
+/* Document Editor Specifics */
+.document-editor {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--charcoal);
+  caret-color: var(--brown-dark);
+}
+
+.document-editor:focus {
+  outline: none;
+}
+
+.document-editor::placeholder {
+  color: #9ca3af;
+  font-style: auto;
+}
