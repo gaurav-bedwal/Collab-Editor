@@ -11,7 +11,7 @@ const AUTO_SAVE_INTERVAL = 5000; // 5 seconds
 let socket = null;
 
 function Avatar({ name, color, size = 7 }) {
-  const initials = name?.split(' ').map(w => w[0]).join('').toUpperCase().slice(0, 2) || '?';
+  const initials = name ? name.split(' ').map(w => w[0]).join('').toUpperCase().slice(0, 2) : '?';
   return (
     <div
       className={`w-${size} h-${size} rounded-full flex items-center justify-center text-white text-[10px] font-black flex-shrink-0 border-2 border-white ring-1 ring-brown-light/10 shadow-sm`}

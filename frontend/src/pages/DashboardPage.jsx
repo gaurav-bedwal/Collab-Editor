@@ -15,7 +15,7 @@ function formatDate(dateStr) {
 }
 
 function Avatar({ name, color, size = 8 }) {
-  const initials = name?.split(' ').map(w => w[0]).join('').toUpperCase().slice(0, 2) || '?';
+  const initials = name ? name.split(' ').map(w => w[0]).join('').toUpperCase().slice(0, 2) : '?';
   return (
     <div
       className={`w-${size} h-${size} rounded-full flex items-center justify-center text-white text-xs font-medium flex-shrink-0 shadow-sm`}
@@ -134,7 +134,7 @@ export default function DashboardPage() {
             <div>
               <p className="text-brown-dark font-black uppercase tracking-[0.2em] text-xs mb-3">Workspace</p>
               <h1 className="text-4xl lg:text-5xl font-extrabold text-charcoal tracking-tight">
-                Hey, {user?.name?.split(' ')[0]} 🖋
+                Hey, {user?.name ? user.name.split(' ')[0] : 'Writer'} 🖋
               </h1>
             </div>
             
